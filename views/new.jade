@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  div(id="container_demo")
+    div(id="wrapper2")
+      div(id="listing", class="animate form")
+        form
+          h2(class="form-signin-heading")  Add new Fact
+            span(class="logout")
+              a(href="/logout")
+                img(src="/images/logout.png", alt="logout")
+          a(href='/home', class="create_d") Home
+          span(class="msg")
+            {{insert}}
+          div.login-wrap
+            div(class="form-group")
+              label(for="Title") Title :
+              input#title(type="text" , ng-model="formData.title" , required ,class="txt_listbx")
+            div(class="form-group")
+              label(for="Content") Content :
+              textarea( ng-model="formData.content", class="txt_listbx")
+            div(class="form-group")
+              label(for="Author") Author :
+              input#title(type="text" , ng-model="formData.author" , required ,class="txt_listbx")
+
+            div(class="clearfix")
+            p(class="login button")
+              input(type="submit" , class="sub_btn" , value="Add" , ng-click="createTodo()")
+

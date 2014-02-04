@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Delete
+  p
+   a(href='/Create') Create
+  p
+   a(href='/Delete') Delete
+  ul
+    li(ng-repeat="friend in todos")
+      p
+        {{friend.fname}} {{friend.lname}}

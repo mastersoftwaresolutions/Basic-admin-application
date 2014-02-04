@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  div(id="container_demo")
+    div(id="wrapper2")
+      div(id="listing", class="animate form")
+        h2(class="form-signin-heading") All Facts
+          span(class="logout")
+            a(href="/logout")
+              img(src="/images/logout.png", alt="logout")
+        a(href='/Create', class="create_d") Create
+        span(class="msg")
+          {{updated}}
+          {{deleted}}
+        div(class="login-wrap")
+          ul(class="facts-heading")
+            li
+              label Title
+            li
+              label Content
+            li
+              label Author
+          ul
+            li(ng-repeat="facts in allFacts")
+              form(id="{{facts.id}}")
+               input(type="text", class="txt_listbx2" , ng-model="facts.title")
+               input(type="text", class="txt_listbx2" , ng-model="facts.content")
+               input(type="text", class="txt_listbx2" , ng-model="facts.author")
+
+               button(type="submit" , class="sub_btn2" , ng-click="editTodo(facts.id,facts)") Update
+
+               a(href="javascript:void(0);" , class="sub_btn3" , ng-click="deleteTodo(facts.id)") Delete
+
+
